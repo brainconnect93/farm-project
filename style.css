@@ -45,3 +45,7 @@ body {
   background-color: #fff;
   color: #24373a;
 }
+
+.overlay {
+  filter: blur(8px);
+}

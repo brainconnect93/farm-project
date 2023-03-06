@@ -1,12 +1,23 @@
-'use strict';
+'use strict'
 
-const modalBtn = document.querySelectorAll('.modal-btn');
 const modal = document.querySelector('.modal-cont');
-const closeBtn = document.querySelector('.close-btn');
+const modalBtn = document.querySelectorAll('.modal-btn');
+const closeBtn = document.querySelector('.close-btn')
+
+const closeModal = function() {
+    modal.classList.add('hidden')
+}
 
 for (let i = 0; i < modalBtn.length; i++) {
-    modalBtn[i].addEventListener('click', function() {
-        console.log('Button clicked');
-        modal.classList.remove('hidden')
-    })
+  modalBtn[i].addEventListener('click', () => {
+    modal.classList.remove('hidden')
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function(e) {
+    if(e.key === 'Escape' && !modal.classList.contains('hidden')){
+      closeModal()
+    }
+  })
 }
