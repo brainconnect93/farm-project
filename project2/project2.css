@@ -3,6 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #d87093;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .container {
@@ -10,11 +11,27 @@ body {
   width: 70%;
   margin: 10% auto;
   padding: 30px;
+  border-radius: 12px;
 }
 
 .play-cont {
   display: flex;
   justify-content: space-between;
+}
+
+.current {
+  border: 1px solid #d87093;
+  padding: 8wpx;
+  background-color: #d87093;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+}
+
+.score {
+  font-size: 30px;
+  text-align: center;
 }
 
 .btn {
@@ -32,4 +49,8 @@ body {
   width: 12%;
   height: 80px;
   margin: 15px 44%;
+}
+
+.hidden {
+  display: none;
 }
