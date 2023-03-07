@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #d87093;
+}
+
+.container {
+  background-color: burlywood;
+  width: 70%;
+  margin: 10% auto;
+  padding: 30px;
+}
+
+.play-cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 10px 40%;
+  padding: 5px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #d87093;
+}
+
+.dice {
+  width: 12%;
+  height: 80px;
+  margin: 15px 44%;
+}
