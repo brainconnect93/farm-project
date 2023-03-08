@@ -57,7 +57,8 @@ body {
 }
 
 .player-winner {
-  background-color: #deb887;
+  background-color: #d3d3d3;
+  padding: 20px;
 }
 
 .hidden {
