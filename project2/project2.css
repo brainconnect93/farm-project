@@ -42,12 +42,16 @@ body {
 .btn {
   display: flex;
   flex-direction: column;
-  width: 20%;
-  margin: 10px 40%;
-  padding: 5px;
+  width: 14%;
+  margin: 10px 43%;
+  padding: 7px;
   background-color: #fff;
   color: #000;
   border: 1px solid #d87093;
+  align-items: center;
+  border-radius: 30px;
+  font-size: 14px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .dice {
