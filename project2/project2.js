@@ -14,13 +14,25 @@ const holdBtn = document.querySelector('.btn-hold')
 
 
 // Starting Condition
-score0El.textContent = 0;
-score1El.textContent = 0;
-dice.classList.add('hidden');
 
-const totalScores = [0, 0]
-let currentScore = 0;
-let activePlayer = 0;
+let totalScores, currentScore, activePlayer, playing;
+
+const init = function(){
+  totalScores = [0, 0]
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0
+
+  dice.classList.add('hidden');
+  player0El.classList.add('player-active')
+  player1El.classList.remove('player-active')
+};
+init();
 
 const switchPlayer = function() {
   document.getElementById(`current-${activePlayer}`).textContent = 0;
@@ -32,9 +44,9 @@ const switchPlayer = function() {
 
 // Rolling dice functionality
 rollBtn.addEventListener('click', () => {
+  if (playing) {
     // 1. Generating a random num on dice roll
     const diceEl = Math.trunc(Math.random() * 6 + 1)
-    console.log(diceEl)
     // 2. Display dice 
     dice.classList.remove('hidden');
     dice.src = `./img/dice${diceEl}.png`
@@ -49,17 +61,28 @@ rollBtn.addEventListener('click', () => {
         // Switch to next player
         switchPlayer();
     }
+  }
 });
 
 holdBtn.addEventListener('click', () => {
+  if (playing) {
     // Add current score to active player's score
     totalScores[activePlayer] += currentScore
     // totalScores[i] = totalScores[i] + currentScore
     document.getElementById(`score-${activePlayer}`).textContent = totalScores[activePlayer];
 
     // check if player's score >= 100
-    // finish the game
+    if (totalScores[activePlayer] >= 10) {
+        playing = false;
+        dice.classList.add('hidden');
+        // finish the game
+      document.querySelector(`.player-${activePlayer}`).classList.add('player-winner');
+      document.querySelector(`.player-${activePlayer}`).classList.remove('player-active');
+    }else {
+        // switch to the next player
+        switchPlayer();
+    }
+  }
+});
 
-    // switch to the next player
-    switchPlayer();
-})
+newBtn.addEventListener('click', init)

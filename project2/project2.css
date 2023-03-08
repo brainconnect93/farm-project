@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  background-color: burlywood;
+  background-color: #deb887;
   width: 70%;
   margin: 10% auto;
   padding: 30px;
@@ -54,6 +54,10 @@ body {
   width: 12%;
   height: 80px;
   margin: 15px 44%;
+}
+
+.player-winner {
+  background-color: #deb887;
 }
 
 .hidden {
