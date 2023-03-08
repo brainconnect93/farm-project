@@ -14,6 +14,11 @@ body {
   border-radius: 12px;
 }
 
+.player-active {
+  background-color: #d87093;
+  padding: 20px;
+}
+
 .play-cont {
   display: flex;
   justify-content: space-between;
@@ -22,11 +27,11 @@ body {
 .current {
   border: 1px solid #d87093;
   padding: 8wpx;
-  background-color: #d87093;
+  background-color: #d3d3d3;
   border-radius: 8px;
   font-size: 18px;
   text-align: center;
-  color: #fff;
+  color: #d87093;
 }
 
 .score {
